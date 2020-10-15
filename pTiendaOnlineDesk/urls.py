@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from pTiendaOnlineDesk import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('search_articule/', views.search_Articule),
+    path('search/', views.search_ArticulesC),
 ]

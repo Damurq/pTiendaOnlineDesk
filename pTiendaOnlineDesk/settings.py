@@ -55,7 +55,7 @@ ROOT_URLCONF = 'pTiendaOnlineDesk.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['C:/Users/Michael Montero/Documents/Codigos/Progra WEB/Practice/Python/Django/pPlantillasTO'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -107,6 +107,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
+#LANGUAGE_CODE = 'es-eu'
 
 LANGUAGE_CODE = 'en-us'
 
