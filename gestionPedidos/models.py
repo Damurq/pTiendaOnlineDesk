@@ -20,3 +20,4 @@ class Pedidos(models.Model):
     numero=models.IntegerField()
     fecha=models.DateField()
     entregado=models.BooleanField()
+    
