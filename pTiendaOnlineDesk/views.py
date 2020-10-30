@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from gestionPedidos.models import *
 from django.core.mail import send_mail
 from django.conf import settings
+from gestionPedidos.forms import FormContact
 
 def search_Articule(request):
     return render(request, "search_articule.html")
@@ -24,11 +25,20 @@ def search_ArticulesC(request):
 
 def contacto (request):
     if request.method == "POST":
-        subject=request.POST["asunto"]
-        message=request.POST["mensaje"] + " " + request.POST["correo"]
-        email_from=settings.EMAIL_HOST_USER
-        recipient_list=["michaelmontero.idb@gmail.com"]
-        send_mail(subject,message,email_from,recipient_list,)
-        return render(request, "thank_you.html")
+        form=FormContact(request.POST)
+        if form.is_valid():
+            infoForm=form.cleaned_data
+            send_mail(infoForm['subject'],infoForm['message'],infoForm.get('mail',''),
+            ['michaelmontero.idb@gmail.com'],)
+            return render(request,'thank_you.html')
+    else:
+        form=FormContact()
+        return render(request,'form_Contact.html',{'form':form})
         
-    return render(request ,"contacto.html")
+    #       subject=request.POST["asunto"]
+    #       message=request.POST["mensaje"] + " " + request.POST["correo"]
+    #       email_from=settings.EMAIL_HOST_USER
+    #       recipient_list=["michaelmontero.idb@gmail.com"]
+    #       send_mail(subject,message,email_from,recipient_list,)
+    #       return render(request, "thank_you.html")
+    #   return render(request ,"contacto.html")

@@ -119,12 +119,21 @@ USE_L10N = True
 
 USE_TZ = True
 
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST    = "smpt.gmail.com"
+#SI FUNCIONA 
+EMAIL_HOST = 'smtp.googlemail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'nseriesdolar4@gmail.com'
+EMAIL_HOST_PASSWORD = 'xjwzxlohkbapmbyl'
 EMAIL_USE_TLS = True
-EMAIL_PORT    = 587                                                #Es el puerto que se utiliza con smpt
-EMAIL_HOST_USER = "nseriesdolar4@gmail.com"
-EMAIL_HOST_PASSWORD = "JOLyne.04"
+
+
+#PILDORAS INFORMATICAS NO FUNCIONA
+#EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+#EMAIL_HOST    = "smpt.gmail.com"
+#EMAIL_USE_TLS = True
+#EMAIL_PORT    = 587                                                #Es el puerto que se utiliza con smpt
+#EMAIL_HOST_USER = "nseriesdolar4@gmail.com"
+#EMAIL_HOST_PASSWORD = "xjwzxlohkbapmbyl"#"JOLyne.04"
 
 
 # Static files (CSS, JavaScript, Images)
